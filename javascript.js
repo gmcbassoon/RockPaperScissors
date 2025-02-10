@@ -1,6 +1,7 @@
 // Create computerAnswer
 let humanScore = 0;
 let computerScore = 0;
+let tieCounter = 0;
 let numOfRounds = prompt("How many rounds would you like?");
 numOfRounds = parseInt(numOfRounds);
 for (let i = 1 ; i <= numOfRounds ; i++) {
@@ -38,7 +39,7 @@ console.log(humanAnswer);
 function compareAnswer() {
     if (humanAnswer === computerAnswer) {
         alert("It's a tie, nobody wins! Next round?");
-        
+        tieCounter++;
     } else {
         if (humanAnswer === "rock" && computerAnswer === "scissors") {
             alert(`Human Wins! Computer played ${computerAnswer}, next round?`);
@@ -77,7 +78,7 @@ compareAnswer();
 if (humanScore === computerScore) {
     alert(`It's a tie with ${humanScore} point\(s)! Reload the page to try again.`);
 } else if (humanScore > computerScore) {
-    alert(`Human wins with ${humanScore} point\(s)! Computer had a measly ${computerScore} point\(s)`);
+    alert(`Human wins with ${humanScore} point\(s)! Computer had a measly ${computerScore} point\(s). There were ${tieCounter} ties!`);
 } else {
-    alert(`Computer wins with ${computerScore} point\(s)! Human had a measly ${humanScore} point\(s)`);
+    alert(`Computer wins with ${computerScore} point\(s)! Human had a measly ${humanScore} point\(s) There were ${tieCounter} ties!`);
 }
