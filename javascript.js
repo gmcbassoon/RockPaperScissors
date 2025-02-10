@@ -37,31 +37,31 @@ console.log(humanAnswer);
 //Comparison of Answers
 function compareAnswer() {
     if (humanAnswer === computerAnswer) {
-        alert("It's a tie, nobody wins!");
+        alert("It's a tie, nobody wins! Next round?");
         
     } else {
         if (humanAnswer === "rock" && computerAnswer === "scissors") {
-            alert(`Human Wins! Computer played ${computerAnswer}, Redo?`);
+            alert(`Human Wins! Computer played ${computerAnswer}, next round?`);
             humanScore++;
             
         } else if (humanAnswer === "scissors" && computerAnswer === "rock") {
-            alert(`Computer Wins! Computer played ${computerAnswer}, Redo?`);
+            alert(`Computer Wins! Computer played ${computerAnswer}, next round?`);
             computerScore++;
             
         } else if (humanAnswer === "paper" && computerAnswer === "rock") {
-            alert(`Human Wins! Computer played ${computerAnswer}, Redo?`);
+            alert(`Human Wins! Computer played ${computerAnswer}, next round?`);
             humanScore++;
             
         } else if (humanAnswer === "rock" && computerAnswer === "paper") {
-            alert(`Computer Wins! Computer played ${computerAnswer}, Redo?`)
+            alert(`Computer Wins! Computer played ${computerAnswer}, next round?`)
             computerScore++;
             
         } else if (humanAnswer === "scissors" && computerAnswer === "paper") {
-            alert(`Human Wins! Computer played ${computerAnswer}, Redo?`);
+            alert(`Human Wins! Computer played ${computerAnswer}, next round?`);
             humanScore++;
             
         } else if (humanAnswer === "paper" && computerAnswer === "scissors") {
-            alert(`Computer Wins! Computer played ${computerAnswer}, Redo?`)
+            alert(`Computer Wins! Computer played ${computerAnswer}, next round?`)
             computerScore++;
             
         }
