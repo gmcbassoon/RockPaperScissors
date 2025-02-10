@@ -1,10 +1,12 @@
-// Create computerAnswer
+
 let humanScore = 0;
 let computerScore = 0;
 let tieCounter = 0;
 let numOfRounds = prompt("How many rounds would you like?");
 numOfRounds = parseInt(numOfRounds);
+//
 for (let i = 1 ; i <= numOfRounds ; i++) {
+// Create computerAnswer
 function getComputerAnswer(max) {
     return Math.floor(Math.random() * max);
     
@@ -32,7 +34,7 @@ function getHumanAnswer(prompt) {
 if (humanAnswer === "rock" || "paper" || "scissors") {
 
 } else {
-    alert("Not a valid answer, please try again")
+    alert("Not a valid answer, please try again");
 }
 console.log(humanAnswer);
 //Comparison of Answers
@@ -54,7 +56,7 @@ function compareAnswer() {
             humanScore++;
             
         } else if (humanAnswer === "rock" && computerAnswer === "paper") {
-            alert(`Computer Wins! Computer played ${computerAnswer}, next round?`)
+            alert(`Computer Wins! Computer played ${computerAnswer}, next round?`);
             computerScore++;
             
         } else if (humanAnswer === "scissors" && computerAnswer === "paper") {
@@ -62,7 +64,7 @@ function compareAnswer() {
             humanScore++;
             
         } else if (humanAnswer === "paper" && computerAnswer === "scissors") {
-            alert(`Computer Wins! Computer played ${computerAnswer}, next round?`)
+            alert(`Computer Wins! Computer played ${computerAnswer}, next round?`);
             computerScore++;
             
         }
