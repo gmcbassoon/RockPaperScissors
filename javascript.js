@@ -70,7 +70,14 @@ function compareAnswer() {
     return;
     
 }
+
 compareAnswer();
-console.log(humanScore);
-console.log(computerScore);
+}
+//Declaring the score at the end
+if (humanScore === computerScore) {
+    alert(`It's a tie with ${humanScore} point\(s)! Reload the page to try again.`);
+} else if (humanScore > computerScore) {
+    alert(`Human wins with ${humanScore} point\(s)! Computer had a measly ${computerScore} point\(s)`);
+} else {
+    alert(`Computer wins with ${computerScore} point\(s)! Human had a measly ${humanScore} point\(s)`);
 }
