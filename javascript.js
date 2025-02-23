@@ -1,13 +1,15 @@
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+const paraAnnouncement = document.querySelector('#paraAnnoucement');
+const paraWinner = document.querySelector('#paraWinner');
 
+console.log(paraWinner);
 let humanScore = 0;
 let computerScore = 0;
 let tieCounter = 0;
 let numOfRounds = 5;
-const rock = document.querySelector("#rock");
-const paper = document.querySelector("#paper");
-const scissors = document.querySelector("#scissors");
-const paraAnnouncement = document.createElement('p');
-const paraWinner = document.createElement('p');
+
 console.log(rock)
 console.log(paper)
 console.log(scissors)
@@ -34,7 +36,11 @@ function convertComputerAnswer() {
     return computerAnswer;
 }
     
-
+function fivePoints() {
+    if (humanScore === 5 || computerScore === 5) {
+        return true;
+    }
+}
 
 
 // Create humanAnswer
@@ -50,7 +56,7 @@ function compareAnswer(humanAnswer, computerAnswer) {
 
     // round++;
     if (humanAnswer === computerAnswer) {
-        paraAnnouncement.textContent =("It's a tie, nobody wins! Next round?");
+        paraAnnouncement.textContent = ("It's a tie, nobody wins! Next round?");
         tieCounter++;
     } else {
         if (humanAnswer === "rock" && computerAnswer === "scissors") {
@@ -58,23 +64,23 @@ function compareAnswer(humanAnswer, computerAnswer) {
             humanScore++;
             
         } else if (humanAnswer === "scissors" && computerAnswer === "rock") {
-            paraAnnouncement.textContent =(`Computer Wins! Computer played ${computerAnswer}, next round?`);
+            paraAnnouncement.textContent = (`Computer Wins! Computer played ${computerAnswer}, next round?`);
             computerScore++;
             
         } else if (humanAnswer === "paper" && computerAnswer === "rock") {
-            paraAnnouncement.textContent =(`Human Wins! Computer played ${computerAnswer}, next round?`);
+            paraAnnouncement.textContent = (`Human Wins! Computer played ${computerAnswer}, next round?`);
             humanScore++;
             
         } else if (humanAnswer === "rock" && computerAnswer === "paper") {
-            paraAnnouncement.textContent =(`Computer Wins! Computer played ${computerAnswer}, next round?`);
+            paraAnnouncement.textContent = (`Computer Wins! Computer played ${computerAnswer}, next round?`);
             computerScore++;
             
         } else if (humanAnswer === "scissors" && computerAnswer === "paper") {
-            paraAnnouncement.textContent =(`Human Wins! Computer played ${computerAnswer}, next round?`);
+            paraAnnouncement.textContent = (`Human Wins! Computer played ${computerAnswer}, next round?`);
             humanScore++;
             
         } else if (humanAnswer === "paper" && computerAnswer === "scissors") {
-            paraAnnouncement.textContent =(`Computer Wins! Computer played ${computerAnswer}, next round?`);
+            paraAnnouncement.textContent = (`Computer Wins! Computer played ${computerAnswer}, next round?`);
             computerScore++;
             
         }
@@ -88,16 +94,16 @@ rock.addEventListener('click', () => {compareAnswer("rock", convertComputerAnswe
 paper.addEventListener("click", () => {compareAnswer("paper", convertComputerAnswer())});
 scissors.addEventListener("click", () => {compareAnswer("scissors", convertComputerAnswer())});
 
-
-
 // }
 //Declaring the score at the end
-if (humanScore === computerScore) {
-    paraWinner.textContent =(`It's a tie with ${humanScore} point\(s)! Reload the page to try again.`);
-} else if (humanScore > computerScore) {
-    paraWinner.textContent =(`Human wins with ${humanScore} point\(s)! Computer had a measly ${computerScore} point\(s). There were ${tieCounter} ties!`);
+if (humanScore || computerScore <= numOfRounds) {
+    paraWinner.textContent = (`You have ${numOfRounds} rounds left!`);
 } else {
-    paraWinner.textContent =(`Computer wins with ${computerScore} point\(s)! Human had a measly ${humanScore} point\(s) There were ${tieCounter} ties!`);
+if (humanScore === computerScore) {
+    paraWinner.textContent = (`It's a tie with ${humanScore} point\(s)! Reload the page to try again.`);
+} else if (humanScore > computerScore) {
+    paraWinner.textContent = (`Human wins with ${humanScore} point\(s)! Computer had a measly ${computerScore} point\(s). There were ${tieCounter} ties!`);
+} else {
+    paraWinner.textContent = (`Computer wins with ${computerScore} point\(s)! Human had a measly ${humanScore} point\(s) There were ${tieCounter} ties!`);
 }
-
-//Button Interaction
+}
