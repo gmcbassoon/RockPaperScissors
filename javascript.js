@@ -52,6 +52,7 @@ function announcement() {
 //Comparison of Answers
 function compareAnswer(humanAnswer, computerAnswer) {
     end.textContent = '';
+    
     // round++;
     if (humanAnswer === computerAnswer) {
         paraAnnouncement.textContent = ("It's a tie, nobody wins! Next round?");
@@ -98,8 +99,9 @@ function compareAnswer(humanAnswer, computerAnswer) {
         }
         
     }
+    humanScoreDiv.textContent = `${humanScore}`
+    computerScoreDiv.textContent = `${computerScore}`
     if (fivePoints()) {
-        
         if (humanScore > computerScore) {
             end.textContent = "You have won! Congratulations!";
         } else if (humanScore < computerScore) {
@@ -110,6 +112,7 @@ function compareAnswer(humanAnswer, computerAnswer) {
         humanScore = 0;
         computerScore = 0;
     }
+  
 }
     
 rock.addEventListener('click', () => {compareAnswer("rock", convertComputerAnswer())});
