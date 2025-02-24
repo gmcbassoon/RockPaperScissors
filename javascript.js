@@ -99,13 +99,15 @@ function compareAnswer(humanAnswer, computerAnswer) {
         }
         
     }
-    humanScoreDiv.textContent = `${humanScore}`
-    computerScoreDiv.textContent = `${computerScore}`
+    humanScoreDiv.textContent = `You: ${humanScore}`
+    computerScoreDiv.textContent = `Cpu: ${computerScore}`
     if (fivePoints()) {
         if (humanScore > computerScore) {
             end.textContent = "You have won! Congratulations!";
+            paraWinner.textContent = `You beat the computer by ${humanScore - computerScore} points!`
         } else if (humanScore < computerScore) {
             end.textContent = "Unfortunately the computer won, pick better next time";
+            paraWinner.textContent = `The computer beat you by ${computerScore - humanScore} points.`
         } else {
             end.textContent = "This is literally impossbile, but good job!";
         }
