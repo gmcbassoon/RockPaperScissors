@@ -2,11 +2,12 @@ const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 
+const everythingContainer = document.querySelector(".everythingContainer");
 const paraAnnouncement = document.querySelector('#paraAnnoucement');
 const paraWinner = document.querySelector('#paraWinner');
 const humanScoreDiv = document.querySelector('#humanScore');
 const computerScoreDiv = document.querySelector('#computerScore');
-const end = document.body.appendChild(document.createElement("p"));
+const end = everythingContainer.appendChild(document.createElement("p"));
 end.classList.add("end");
 
 let humanScore = 0;
