@@ -4,18 +4,33 @@
     font-weight: 400;
     font-style: normal;
 }
-.everythingContainer {
+ body {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  justify-content: stretch;
+  background: rgb(228,182,128);
+  background: linear-gradient(90deg, rgba(228,182,128,1) 8%, rgba(242,213,167,1) 25%, rgba(255,255,255,1) 63%);
+  
+} 
+ .everythingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
   align-items: center;
-  vertical-align: middle;
-  margin: auto;
+  margin-top: 32px;
+  padding: 16px;
+  
 }
 .intro {
     display:flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 #paraAnnoucement {
     display:flex;
@@ -38,6 +53,11 @@
     align-items: center;
     gap: 16px;
 }
+.scoreContainer {
+  display:flex;
+  flex-direction: row;
+  gap: 52px;
+}
 
 #paraWinner {
     display:flex;
@@ -50,9 +70,10 @@
     justify-content: center;
     align-items: center;
 }
+
 button {
   align-items: center;
-  background-color: #fee6e3;
+  background-color: #ff9506;
   border: 2px solid #111;
   border-radius: 8px;
   box-sizing: border-box;
@@ -94,7 +115,7 @@ button:hover:after {
 }
 
 button:active {
-  background-color: #ffdeda;
+  background-color: #ff5e01;
   outline: 0;
 }
 
